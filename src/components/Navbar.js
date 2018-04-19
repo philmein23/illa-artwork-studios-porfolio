@@ -8,7 +8,9 @@ import { css } from 'glamor';
 const link = css({
   '> a': {
     color: 'black',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    fontSize: '2em',
+    color: 'rgb(112,112,112, 100%);'
   }
 });
 

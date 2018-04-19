@@ -12,10 +12,15 @@ export default function Header() {
         display: 'flex',
         justifyContent: 'space-between',
         padding: '0.5em',
-        textAlign: 'center'
+        textAlign: 'center',
+        backgroundColor: '#FFF',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.18)',
+        marginBottom: '1em'
       }}
     >
-      <h1>Illa Art Workz Studio</h1>
+      <div css={{ fontSize: '5em', color: 'rgb(112,112,112, 100%)' }}>
+        Illa Art Workz Studio
+      </div>
       <Navbar />
     </div>
   );

@@ -18,9 +18,7 @@ class App extends Component {
       <Router>
         <div
           css={{
-            fontFamily: 'cortado',
-            fontWeight: '500',
-            fontSize: '3em'
+            fontFamily: 'cortado'
           }}
         >
           <Header />
