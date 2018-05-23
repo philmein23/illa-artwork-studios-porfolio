@@ -1,36 +1,13 @@
 import React, { Component } from 'react';
-import { CLOUDINARY } from '../constants';
+import ImageListing from './ImageListing';
+import Images from './Images';
 
-import Image from './Image';
 
 import { createElement } from 'glamor/react';
 import { css } from 'glamor';
 /* @jsx createElement */
 
 class Home extends Component {
-  state = {
-    publicIds: null
-  };
-
-  async componentDidMount() {
-    const options = {
-      method: 'GET',
-      mode: 'cors'
-    };
-
-    const resources = await fetch(
-      CLOUDINARY({ tagName: 'chez' }).URL,
-      options
-    );
-    const data = await resources.json();
-
-    let publicIds = data.resources.map(
-      resource => resource.public_id
-    );
-
-    this.setState(() => ({ publicIds }));
-  }
-
   render() {
     return (
       <div
@@ -38,14 +15,11 @@ class Home extends Component {
           maxWidth: '1000px',
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gridGap: '5px'
-        }}
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))'        }}
       >
-        {this.state.publicIds &&
-          this.state.publicIds.map(id => (
-            <Image publicId={id} width={200} />
-          ))}
+      <Images> 
+        <ImageListing />
+      </Images>
       </div>
     );
   }

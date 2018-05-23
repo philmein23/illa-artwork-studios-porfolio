@@ -10,7 +10,7 @@ const link = css({
     color: 'black',
     textDecoration: 'none',
     fontSize: '2em',
-    color: 'rgb(112,112,112, 100%);'
+    color: 'rgb(112,112,112, 100%)'
   }
 });
 

@@ -18,7 +18,7 @@ export default function Header() {
         marginBottom: '1em'
       }}
     >
-      <div css={{ fontSize: '5em', color: 'rgb(112,112,112, 100%)' }}>
+      <div css={{ fontSize: '3em', color: 'rgb(112,112,112, 100%)' }}>
         Illa Art Workz Studio
       </div>
       <Navbar />
