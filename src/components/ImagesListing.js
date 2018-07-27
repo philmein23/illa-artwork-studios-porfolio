@@ -1,14 +1,9 @@
 import React, { Component, Fragment } from 'react';
+import Image from './Image';
 
 import { CLOUDINARY } from '../constants';
 
-const ImagesContext = React.createContext({
-  images: []
-})
-
 class Images extends Component {
-  static Consumer = ImagesContext.Consumer;
-
   state = {
     publicIds: null,
     id: null
@@ -26,23 +21,21 @@ class Images extends Component {
       mode: 'cors'
     };
 
-    const resources = await fetch(
-      CLOUDINARY({ tagName: 'chez' }).URL,
-      options
-    );
+    const resources = await fetch(CLOUDINARY({ tagName: 'chez' }).URL, options);
 
     const data = await resources.json();
 
     return data.resources.map(resource => resource.public_id);
-
   };
 
   render() {
-    return(
-      <ImagesContext.Provider value={this.state}>
-        { this.props.children }
-      </ImagesContext.Provider>
-    )
+    const { publicIds } = this.state;
+
+    return (
+      <Fragment>
+        {publicIds && publicIds.map(publicId => <Image publicId={publicId} />)}
+      </Fragment>
+    );
   }
 }
 

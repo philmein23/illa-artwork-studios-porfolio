@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import ImageListing from './ImageListing';
-import Images from './Images';
-
+import ImagesListing from './ImagesListing';
 
 import { createElement } from 'glamor/react';
 import { css } from 'glamor';
@@ -15,11 +13,10 @@ class Home extends Component {
           maxWidth: '1000px',
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))'        }}
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))'
+        }}
       >
-      <Images> 
-        <ImageListing />
-      </Images>
+        <ImagesListing />
       </div>
     );
   }
