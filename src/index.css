@@ -29,16 +29,20 @@ html {
   height: calc(100vh - 10rem);
 }
 
-.ui-items {
-  /* overflow-y: scroll; */
-}
-
 .ui-item {
-  height: 15rem;
-  -o-object-fit: contain;
   object-fit: contain;
+  object-position: top;
+  height: 15rem;
   -webkit-animation: item 0.5s calc(var(--i, 0) * 0.05s) cubic-bezier(0.5, 0, 0.2, 1) both;
   animation: item 0.5s calc(var(--i, 0) * 0.05s) cubic-bezier(0.5, 0, 0.2, 1) both;
+}
+
+.ui-items:hover .ui-item {
+  opacity: 0.6;
+}
+
+.ui-items:hover .ui-item:hover {
+  opacity: 1;
 }
 
 @keyframes item {
