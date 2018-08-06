@@ -7,10 +7,11 @@ import { css } from 'glamor';
 
 const link = css({
   '> a': {
-    color: 'black',
+    fontFamily: 'proxima-nova',
+    color: '#070707',
     textDecoration: 'none',
-    fontSize: '2em',
-    color: 'rgb(112,112,112, 100%)'
+    fontSize: '1rem',
+    padding: '1rem 0.5rem'
   }
 });
 
@@ -27,7 +28,6 @@ export default function Navbar() {
       <nav css={[{ ...link }, { ...grid }]}>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/work">Work</Link>
       </nav>
     </Fragment>
   );

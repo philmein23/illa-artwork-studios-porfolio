@@ -18,7 +18,16 @@ export default function Header() {
         marginBottom: '1em'
       }}
     >
-      <div css={{ fontSize: '3em', color: 'rgb(112,112,112, 100%)' }}>
+      <div
+        css={{
+          fontFamily: 'freight-sans-pro',
+          fontSize: '2rem',
+          fontWeight: 700,
+          color: '#070707',
+          letterSpacing: '1px',
+          textTransform: 'uppercase'
+        }}
+      >
         Illa Art Workz Studio
       </div>
       <Navbar />
