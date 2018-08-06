@@ -11,6 +11,13 @@ const link = css({
     color: '#070707',
     textDecoration: 'none',
     fontSize: '1rem',
+    padding: '1rem 0.5rem',
+    width: '100%',
+    height: '100%'
+  },
+  '> a:hover': {
+    backgroundColor: '#070707',
+    color: '#FFF',
     padding: '1rem 0.5rem'
   }
 });

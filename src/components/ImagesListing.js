@@ -46,7 +46,6 @@ class Images extends Component {
     switch (nextState) {
       case 'loading':
         this.getImageIds();
-
         break;
       case 'images':
         if (action.image_ids) {
@@ -72,9 +71,7 @@ class Images extends Component {
     };
 
     const resources = await fetch(CLOUDINARY({ tagName: 'chez' }).URL, options);
-
     const data = await resources.json();
-
     const image_ids = data.resources.map(resource => resource.public_id);
 
     this.transition({ type: 'SEARCH_SUCCESS', image_ids });
@@ -106,6 +103,8 @@ class Images extends Component {
       </div>
     );
   };
+
+  renderPhoto = state => {};
 
   render() {
     const { galleryState } = this.state;
