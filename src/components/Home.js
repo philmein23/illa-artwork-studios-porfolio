@@ -4,7 +4,7 @@ import ImagesListing from './ImagesListing';
 class Home extends Component {
   render() {
     return (
-      <div className="ui-app">
+      <div>
         <ImagesListing />
       </div>
     );

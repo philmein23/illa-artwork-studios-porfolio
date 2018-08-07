@@ -90,25 +90,49 @@ class Images extends Component {
         {state === 'images' &&
           this.state.image_ids.map((imageId, i) => {
             return (
-              <div>
+              <section>
                 <img
                   className="ui-item"
                   key={imageId}
                   style={{ maxWidth: '100%', '--i': i }}
                   src={CLOUDINARY({ publicId: imageId, width: 700 }).imageURL}
+                  onClick={() =>
+                    this.transition({
+                      type: 'SELECT_IMAGE',
+                      image_id: imageId
+                    })
+                  }
                 />
-              </div>
+              </section>
             );
           })}
       </div>
     );
   };
 
-  renderPhoto = state => {};
+  renderImage = state => {
+    if (state !== 'image') return;
+
+    return (
+      <section className="ui-image-detail">
+        <img
+          className="ui-image"
+          src={
+            CLOUDINARY({ publicId: this.state.image_id, width: 700 }).imageURL
+          }
+        />
+      </section>
+    );
+  };
 
   render() {
     const { galleryState } = this.state;
-    return <Fragment>{this.renderGallery(galleryState)}</Fragment>;
+    return (
+      <div className="ui-app" data-state={galleryState}>
+        {this.renderGallery(galleryState)}
+        {this.renderImage(galleryState)}
+      </div>
+    );
   }
 }
 

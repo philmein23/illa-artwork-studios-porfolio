@@ -29,6 +29,15 @@ html {
   height: calc(100vh - 10rem);
 }
 
+.ui-app[data-state='image'] * {
+  opacity: 0.3;
+}
+
+.ui-app[data-state='image'] .ui-image-detail,
+.ui-app[data-state='image'] .ui-image-detail * {
+  opacity: 1;
+}
+
 .ui-item {
   object-fit: contain;
   object-position: top;
@@ -43,6 +52,18 @@ html {
 
 .ui-items:hover .ui-item:hover {
   opacity: 1;
+  cursor: pointer;
+}
+
+.ui-image-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.ui-image {
+  height: 70vh;
 }
 
 @keyframes item {
