@@ -51,10 +51,12 @@ class Images extends Component {
         if (action.image_ids) {
           return { image_ids: action.image_ids };
         }
+        break;
       case 'image':
         if (action.image_id) {
           return { image_id: action.image_id };
         }
+        break;
       default:
         break;
     }
