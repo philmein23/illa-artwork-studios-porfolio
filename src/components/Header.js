@@ -8,6 +8,7 @@ import { css } from 'glamor';
 export default function Header() {
   return (
     <div
+      className="ui-header"
       css={{
         display: 'flex',
         justifyContent: 'space-between',

@@ -32,7 +32,7 @@ const grid = css({
 export default function Navbar() {
   return (
     <Fragment>
-      <nav css={[{ ...link }, { ...grid }]}>
+      <nav className="main-nav" css={[{ ...link }, { ...grid }]}>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
       </nav>

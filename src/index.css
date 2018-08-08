@@ -22,6 +22,17 @@ html {
   transition: all 0.3s cubic-bezier(0.2, 0, 0.4, 1);
 }
 
+@media (max-width: 1024px) {
+  .ui-header {
+    display: flex;
+    flex-direction: column;
+  }
+  .ui-header>.main-nav {
+    grid-auto-columns: max-content;
+    justify-content: center;
+  }
+}
+
 .ui-app {
   margin: 0 auto;
   width: 50rem;
