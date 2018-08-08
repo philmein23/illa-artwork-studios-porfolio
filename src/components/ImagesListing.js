@@ -87,7 +87,11 @@ class Images extends Component {
           gridGap: '0.25rem'
         }}
       >
-        {state === 'images' &&
+        {state === 'error' ? (
+          <span>Error</span>
+        ) : (
+          this.state.image_ids &&
+          this.state.image_ids.length &&
           this.state.image_ids.map((imageId, i) => {
             return (
               <section>
@@ -105,7 +109,8 @@ class Images extends Component {
                 />
               </section>
             );
-          })}
+          })
+        )}
       </div>
     );
   };
@@ -116,6 +121,7 @@ class Images extends Component {
     return (
       <section className="ui-image-detail">
         <img
+          onClick={() => this.transition({ type: 'EXIT_IMAGE' })}
           className="ui-image"
           src={
             CLOUDINARY({ publicId: this.state.image_id, width: 700 }).imageURL
