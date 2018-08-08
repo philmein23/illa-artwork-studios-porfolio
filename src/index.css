@@ -30,7 +30,7 @@ html {
 }
 
 .ui-app[data-state='image'] * {
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .ui-app[data-state='image'] .ui-image-detail,
@@ -60,6 +60,10 @@ html {
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .ui-image {
